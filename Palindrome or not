@@ -1,0 +1,58 @@
+import java.util.*;
+class Palindrome_both
+{
+	public static void main(String args[])
+	{
+		int choice;
+		Scanner s=new Scanner(System.in);
+		System.out.println("enetr the case: ");
+		choice=s.nextInt();
+		s.nextLine();
+		if(choice==1)
+		{
+                	String s1,temp;
+			int len,i;
+			String s2="";
+			char ch;
+			System.out.println("enter the string: ");
+			s1=s.nextLine();
+			temp=s1;
+			len=s1.length();
+			for(i=len-1;i>=0;i--)
+			{
+				ch=s1.charAt(i);
+				s2+=ch;
+			}
+			System.out.println(s2);
+			if(s2.equals(temp))
+			{
+				System.out.println("palindrome");
+			}
+			else
+			{
+				System.out.println("not a palindrome");
+			}
+		}
+		else
+		{
+			System.out.println("enter number: ");
+			int n=s.nextInt();
+			int n1=n;
+			int rev=0,rem;
+			while(n!=0)
+			{
+				rem=n%10;
+				rev=rev*10+rem;
+				n=n/10;
+			}
+			if(n1==rev)
+			{
+				System.out.println("given number is a palindrome");
+			}
+			else
+			{
+				System.out.println("given number is not a palindrome");
+			}
+		}
+	}
+}
